@@ -1,10 +1,10 @@
 const { SupabaseClient } = require("@supabase/supabase-js");
 
 const supabase = new SupabaseClient(
-    "https://ycqarkitulzvkawcpnbe.supabase.co",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljcWFya2l0dWx6dmthd2NwbmJlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY0MjIxNzEsImV4cCI6MjAxMTk5ODE3MX0.UgfNedtCqV6wS4vId7GXNmFn7wIhX27f5EQyr5lIw98",
-)
+  "https://orbnotirwvdxfyasqpxe.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yYm5vdGlyd3ZkeGZ5YXNxcHhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY0ODkxOTIsImV4cCI6MjAxMjA2NTE5Mn0.QNjgtLY7SrFWyD9d2z45PlLlKIcd8jD1ghpnjPHQk3I"
+);
 
 module.exports = {
-    supabase
-}
+  supabase,
+};
