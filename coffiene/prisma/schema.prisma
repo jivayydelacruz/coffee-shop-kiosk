@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model menu {
+  productId    String         @id
+  productName  String
+  description  String
+  price        Int
+  image        String?
+  receipt_item receipt_item[]
+}
+
+model receipt {
+  receiptId    String         @id(map: "receipt_pkey1")
+  created_at   DateTime       @default(now()) @db.Timestamptz(6)
+  receipt_item receipt_item[]
+}
+
+model receipt_item {
+  receiptId   String
+  productId   String
+  temperature String
+  quantity    Decimal? @db.Decimal
+  menu        menu     @relation(fields: [productId], references: [productId], onDelete: NoAction, onUpdate: NoAction)
+  receipt     receipt  @relation(fields: [receiptId], references: [receiptId], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([receiptId, productId, temperature], map: "receipt_item_pkey1")
+}
